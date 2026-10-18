@@ -10,13 +10,14 @@ The source code, build workflows, development discussions and bug tracker live i
 
 ## Downloads
 
-- [Nightly builds](https://github.com/TeamGDB/Yakumo-nightly/releases) — experimental packages from this channel.
+- [Latest nightly](https://github.com/TeamGDB/Yakumo-nightly/releases/latest) — the newest successfully published experimental build.
+- [All nightly builds](https://github.com/TeamGDB/Yakumo-nightly/releases) — previous snapshots from this channel.
 - [Stable releases](https://github.com/TeamGDB/Yakumo/releases/latest) — the recommended choice for normal play.
 - [Installation, controls and game-data requirements](https://github.com/TeamGDB/Yakumo/blob/main/profiles/mhp3rd/README.md).
 
-**Channel status:** no nightly packages have been published yet. Packages will appear in Releases when nightly publishing is enabled.
+Nightly runs are scheduled daily at **00:00 UTC**, publishing when `main` has changed since the latest complete nightly. A manual run can force a rebuild. GitHub may queue a scheduled run after that time. Packages cover Windows x86-64, Linux / Steam Deck x86-64, macOS Apple Silicon and Android ARM64.
 
-Every build in this channel is a **pre-release**. A newer nightly is not automatically a better or more stable build. A successful build or passing automated tests does not establish that every device and gameplay scenario was tested. Publication may be skipped when builds or checks fail, and platform availability can vary.
+This channel uses normal GitHub Releases marked **Latest** for convenient downloads. They remain **experimental nightlies**, without stable-release sign-off. A newer nightly is not automatically a better or more stable build. A successful build or passing automated tests does not establish that every device and gameplay scenario was tested. Publication requires all four platform packages to pass content checks and the Android APK to pass production-signature verification; failed build or verification checks block publication.
 
 Before downloading, read that build's release notes. Check its source commit, included platforms, test results, known problems and checksums. Choose the package for your operating system and CPU architecture, and verify it against the attached `SHA256SUMS`.
 
@@ -27,6 +28,8 @@ Before downloading, read that build's release notes. Check its source commit, in
 3. Do not assume a nightly uses separate player data. If it uses the same data folder or Android application ID as stable Yakumo, the installations share that data. A different executable or installation directory alone does not guarantee isolation.
 4. On Android, export your saves before uninstalling an app or clearing its storage. Both operations can remove its private player data. Do not treat replacing an APK as a save backup.
 5. If a nightly fails, return to a known-good build and use your preserved backup. Stop testing on your only copy of important saves.
+
+Android nightlies use the normal Yakumo application ID and release signing key. They update the ordinary installation and use its existing player data.
 
 See the upstream [save and backup guide](https://github.com/TeamGDB/Yakumo/blob/main/profiles/mhp3rd/README.md#where-saves-live-and-how-to-back-them-up), [macOS guide](https://github.com/TeamGDB/Yakumo/blob/main/docs/MACOS.md) and [Linux / Steam Deck guide](https://github.com/TeamGDB/Yakumo/blob/main/docs/LINUX.md).
 
